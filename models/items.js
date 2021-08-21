@@ -6,11 +6,29 @@ const newItemSchema=new Schema({
         required: true
     },
     Des_producto:{
-        type: String
+        type: String,
+        required: true
+    },
+    Category_producto:{
+        type: String,
+        required: true
     },
     Pre_producto:{
-        type: Number
+        type: Number,
+        required: true
     },
+    Marca_producto:{
+        type: String,
+        required: true
+    },
+    Modelo_producto:{
+        type: String,
+        required: true
+    },
+    Cantidad_producto:{
+        type: Number,
+        required: true
+    }
   
 })
 
