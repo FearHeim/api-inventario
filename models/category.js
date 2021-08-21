@@ -5,7 +5,7 @@ const newItemSchema=new Schema({
         type: String,
         required: true
     },
-    Nombre:{
+    Nombre_cat:{
         type: String,
         required: true
     }
