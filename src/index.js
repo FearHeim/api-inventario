@@ -156,8 +156,10 @@ app.get("/api/v1/client", async (req, res) => {
 
 app.post("api/v1/nuevo_client", async (req, res) => {
   const client = new Client({
-    Codigo_cat: req.body.Codigo_cat,
-    Nombre_cat: req.body.Nombre_cat,
+    Nom_cliente: req.body.Nom_cliente,
+    Apellido_cliente: req.body.Apellido_cliente,
+    Email_cliente: req.body.Email_cliente,
+    Pass_cliente: req.body.Pass_cliente,
   });
   await client.save();
   res.send(client);
@@ -177,13 +179,22 @@ app.patch("api/v1/update_client", async (req, res) => {
   try {
     const client = await Client.findOne({ _id: req.params.id });
 
-    if (req.body.Codigo_cat) {
-      client.Codigo_cat = req.body.Codigo_cat;
+    if (req.body.Nom_cliente) {
+      client.Nom_cliente = req.body.Nom_cliente;
     }
 
-    if (req.body.Nombre_cat) {
-      client.Nombre_cat = req.body.Nombre_cat;
+    if (req.body.Apellido_cliente) {
+      client.Apellido_cliente = req.body.Apellido_cliente;
     }
+
+    if (req.body.Email_cliente) {
+      client.Email_cliente = req.body.Email_cliente;
+    }
+
+    if (req.body.Pass_cliente) {
+      client.Pass_cliente = req.body.Pass_cliente;
+    }
+
 
     await client.save();
     res.send(client);
