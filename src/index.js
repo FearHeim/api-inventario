@@ -51,7 +51,7 @@ app.post("api/v1/nuevo_item", async (req, res) => {
   res.send(item);
 });
 
-app.delete("api/v1/delete-item", async (req, res) => {
+app.delete("api/v1/delete_item", async (req, res) => {
   try {
     await Item.deleteOne({ _id: req.params.id });
     res.status(204).send();
@@ -117,7 +117,7 @@ app.post("api/v1/nueva_categoria", async (req, res) => {
   res.send(category);
 });
 
-app.delete("api/v1/delete-categoria", async (req, res) => {
+app.delete("api/v1/delete_categoria", async (req, res) => {
   try {
     await Category.deleteOne({ _id: req.params.id });
     res.status(204).send();
@@ -163,7 +163,7 @@ app.post("api/v1/nuevo_client", async (req, res) => {
   res.send(client);
 });
 
-app.delete("api/v1/delete-client", async (req, res) => {
+app.delete("api/v1/delete_client", async (req, res) => {
   try {
     await Client.deleteOne({ _id: req.params.id });
     res.status(204).send();
